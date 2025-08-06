@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abadi Visual | Penangkap Momen Berharga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3a3a3a;
+            --secondary: #d4af37;
+            --accent: #e2e2e2;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dd3d3f2c-4bbb-4e00-99a2-01f7caa3088b.png') center/cover no-repeat;
+            min-height: 100vh;
+        }
+        
+        .gallery-item {
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .testimonial-slider {
+            scroll-behavior: smooth;
+        }
+        
+        .floating-btn {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-md z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">
+                <span class="text-gray-800">Abadi Visual</span><span class="text-yellow-600"></span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="nav-link text-gray-700 hover:text-yellow-600">Beranda</a>
+                <a href="#portfolio" class="nav-link text-gray-700 hover:text-yellow-600">Portofolio</a>
+                <a href="#services" class="nav-link text-gray-700 hover:text-yellow-600">Layanan</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-yellow-600">Tentang</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-yellow-600">Kontak</a>
+            </div>
+            
+            <button class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center justify-center text-center text-white">
+        <div class="max-w-4xl px-6 animate-fadeIn">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Tangkap Momen Berharga Anda</h1>
+            <p class="text-xl mb-8">Specialis dalam fotografi pernikahan, wisuda, dan pemandangan alam. Setiap momen istimewa layak untuk dikenang.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#portfolio" class="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 rounded-full font-medium transition duration-300">Lihat Portofolio</a>
+                <a href="#contact" class="bg-transparent border-2 border-white hover:bg-white hover:bg-opacity-20 text-white px-8 py-3 rounded-full font-medium transition duration-300">Hubungi Saya</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Portofolio Karya</h2>
+                <div class="w-24 h-1 bg-yellow-600 mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Beberapa hasil karya terbaik yang merefleksikan keindahan momen-momen spesial</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Wedding Photography -->
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-500">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="images/picwedding.jpeg" alt="Pernikahan bahagia pasangan" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">Pernikahan</h3>
+                                <button class="bg-yellow-600 text-white px-4 py-2 rounded mt-2" onclick="showPaymentMenu('Pernikahan')">Pesan Sekarang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graduation Photography -->
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-500">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="images/picproduk.jpg" alt="Wisudawan melempar topi di udara dengan latar belakang kampus" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">Foto Produk</h3>
+                                <button class="bg-yellow-600 text-white px-4 py-2 rounded mt-2" onclick="showPaymentMenu('Foto Produk')">Pesan Sekarang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Landscape Photography -->
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-500">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="images/pictevent.jpg" alt="Sunrise Gunung Bromo dengan kabut dan sinar emas" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">Dokumentasi Event</h3>
+                                <button class="bg-yellow-600 text-white px-4 py-2 rounded mt-2" onclick="showPaymentMenu('Dokumentasi Event')">Pesan Sekarang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portrait Photography -->
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-500">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="images/picpotret.jpg" alt="Potret close-up wanita dengan cahaya alami" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">Potret</h3>
+                                <button class="bg-yellow-600 text-white px-4 py-2 rounded mt-2" onclick="showPaymentMenu('Potret')">Pesan Sekarang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Photography -->
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-500">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="images/picyearbook.jpg" alt="Acara perusahaan dengan dekorasi lampu warm white" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">Year Book / Album Kenangan</h3>
+                                <button class="bg-yellow-600 text-white px-4 py-2 rounded mt-2" onclick="showPaymentMenu('Year Book')">Pesan Sekarang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maternity Photography -->
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-500">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="images/picprewed.jpg" alt="Pasangan maternity di kebun bunga" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">Prewedding</h3>
+                                <button class="bg-yellow-600 text-white px-4 py-2 rounded mt-2" onclick="showPaymentMenu('Prewedding')">Pesan Sekarang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Layanan Kami</h2>
+                <div class="w-24 h-1 bg-yellow-600 mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Layanan profesional untuk mengabadikan setiap momen berharga dalam hidup Anda</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 text-center">
+                    <div class="text-yellow-600 text-4xl mb-4">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Fotografi Pernikahan</h3>
+                    <p class="text-gray-600">Penangkapan momen sakral pernikahan Anda dengan gaya klasik dan modern, baik indoor maupun outdoor.</p>
+                    <div class="mt-6">
+                        <span class="text-yellow-600 font-bold">Mulai dari Rp 5.000.000</span>
+                    </div>
+                    <button class="mt-4 inline-block bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded" onclick="showPaymentMenu('Fotografi Pernikahan')">Bayar Sekarang</button>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 text-center">
+                    <div class="text-yellow-600 text-4xl mb-4">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Year Book/Album Kenangan</h3>
+                    <p class="text-gray-600">Mengabadikan momen kebanggaan kelulusan dengan konsep kreatif di lokasi kampus atau outdoor.</p>
+                    <div class="mt-6">
+                        <span class="text-yellow-600 font-bold">Mulai dari Rp 1.500.000</span>
+                    </div>
+                    <button class="mt-4 inline-block bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded" onclick="showPaymentMenu('Year Book')">Bayar Sekarang</button>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 text-center">
+                    <div class="text-yellow-600 text-4xl mb-4">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Foto Produk</h3>
+                    <p class="text-gray-600">Foto produk berkualitas tinggi (untuk katalog, market place, media sosial, website, dll.)</p>
+                    <div class="mt-6">
+                        <span class="text-yellow-600 font-bold">Mulai dari Rp 500.000</span>
+                    </div>
+                    <button class="mt-4 inline-block bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded" onclick="showPaymentMenu('Foto Produk')">Bayar Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <img src="images/picprofil.jpg" alt="Fotografer profesional sedang memotret dengan kamera DSLR di lokasi pernikahan outdoor" class="rounded-lg shadow-xl w-full">
+                        <div class="absolute -bottom-6 -right-6 bg-yellow-600 w-32 h-32 -z-10 rounded-lg"></div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Tentang Saya</h2>
+                    <div class="w-24 h-1 bg-yellow-600 mb-6"></div>
+                    <p class="text-gray-600 mb-4">Dengan lebih dari 4 tahun pengalaman di dunia fotografi, saya telah membantu ratusan pasangan, lulusan, dan pecinta alam mengabadikan momen berharga mereka.</p>
+                    <p class="text-gray-600 mb-6">Pendekatan saya mengutamakan kesan natural dan emosi otentik, dengan sentuhan artistic yang membuat setiap foto bercerita.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-yellow-600 mr-4 mt-1">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Perlengkapan Profesional</h4>
+                                <p class="text-gray-600">Menggunakan kamera dan lensa terbaik dari Canon dan Sony</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-yellow-600 mr-4 mt-1">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Editing Berkualitas</h4>
+                                <p class="text-gray-600">Proses editing profesional untuk hasil maksimal</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-yellow-600 mr-4 mt-1">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Pengalaman Luas</h4>
+                                <p class="text-gray-600">Telah bekerja di lebih dari 100 acara dan lokasi berbeda</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="py-20 px-6 bg-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold
+                                <h2 class="text-3xl md:text-4xl font-bold mb-4">Kata Klien Kami</h2>
+                <div class="w-24 h-1 bg-yellow-600 mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Apa yang pelanggan kami katakan tentang pengalaman bekerja sama</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Foto pernikahan kami sangat indah! Moment Photography mampu menangkap setiap emosi dan detail penting di hari spesial kami. Hasilnya melebihi ekspektasi!"</p>
+                    <div class="flex items-center">
+                        <div class="h-12 w-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/27d9877a-0ace-4e0c-a91e-86532d24b211.png" alt="Pasangan muda tersenyum dengan latar belakang blur, mengenakan pakaian kasual" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Andi & Rina</h4>
+                            <p class="text-gray-500 text-sm">Pernikahan Bali</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Wisuda saya diabadikan dengan sangat epik! Sudut pengambilan gambar yang kreatif dan editing yang membuat foto saya terlihat sangat profesional. Recommend banget!"</p>
+                    <div class="flex items-center">
+                        <div class="h-12 w-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4b65f3c7-261a-422f-8758-b415f258a362.png" alt="Mahasiswa mengenakan toga dengan ekspresi bangga, di kampus UI" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Dewi S.</h4>
+                            <p class="text-gray-500 text-sm">Wisudawan UI</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Berkat Moment Photography, kami memiliki koleksi foto landscape Bromo yang spektakuler. Pengaturan waktu dan komposisinya sempurna!"</p>
+                    <div class="flex items-center">
+                        <div class="h-12 w-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bd41f854-13ba-47c0-b84f-292a4873503b.png" alt="Pria paruh baya tersenyum dengan latar pemandangan gunung" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Budi K.</h4>
+                            <p class="text-gray-500 text-sm">Traveller</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Hubungi Kami</h2>
+                <div class="w-24 h-1 bg-yellow-600 mx-auto mb-4"></div>
+                <p class="text-gray-300 max-w-2xl mx-auto">Siap membantu Anda mengabadikan momen berharga. Silakan hubungi kami untuk konsultasi dan diskusi kebutuhan fotografi Anda.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-300 mb-2">Nama Anda</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-600">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-300 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-600">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-300 mb-2">Subjek</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-600">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-300 mb-2">Pesan</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-600"></textarea>
+                        </div>
+                        <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-medium transition duration-300 w-full md:w-auto">Kirim Pesan</button>
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-700 p-8 rounded-lg h-full">
+                        <h3 class="text-xl font-bold mb-6">Info Kontak</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-yellow-600 mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Alamat Studio</h4>
+                                    <p class="text-gray-300">Puri Permai 2, Blok C.5, No.16</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-yellow-600 mr-4 mt-1">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Telepon</h4>
+                                    <p class="text-gray-300">+62 838-2777-7749</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-yellow-600 mr-4 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Email</h4>
+                                    <p class="text-gray-300">fikrysatrianugraha@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-yellow-600 mr-4 mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Jam Operasional</h4>
+                                    <p class="text-gray-300">Senin - Jumat: 09.00 - 17.00 WIB</p>
+                                    <p class="text-gray-300">Sabtu: 09.00 - 15.00 WIB</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">Sosial Media</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.instagram.com/fikrynugraha1724?igsh=MXE3eXNpbHVucGt5NA%3D%3D&utm_source=qr" class="text-gray-300 hover:text-white transition duration-300">
+                                    <i class="fab fa-instagram text-2xl"></i>
+                                </a>
+                                <a href="https://bit.ly/AbadiVisual" class="text-gray-300 hover:text-white transition duration-300">
+                                    <i class="fab fa-whatsapp text-2xl"></i>
+                                </a>
+                                <a href="https://www.tiktok.com/@fikrynugraha1724?_t=ZS-8y8WOc9KOhN&_r=1" class="text-gray-300 hover:text-white transition duration-300">
+                                    <i class="fab fa-tiktok text-2xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold">
+                        <span class="text-gray-200">Abadi</span><span class="text-yellow-600">Visual</span>
+                    </a>
+                    <p class="mt-2 text-sm">Penangkap momen berharga sejak 2021</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-gray-200 font-bold mb-4">Tautan Cepat</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-yellow-600 transition duration-300">Beranda</a></li>
+                            <li><a href="#portfolio" class="hover:text-yellow-600 transition duration-300">Portofolio</a></li>
+                            <li><a href="#services" class="hover:text-yellow-600 transition duration-300">Layanan</a></li>
+                            <li><a href="#about" class="hover:text-yellow-600 transition duration-300">Tentang</a></li>
+                            <li><a href="#contact" class="hover:text-yellow-600 transition duration-300">Kontak</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-gray-200 font-bold mb-4">Layanan</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-yellow-600 transition duration-300">Pernikahan</a></li>
+                            <li><a href="#" class="hover:text-yellow-600 transition duration-300">Foto Produk</a></li>
+                            <li><a href="#" class="hover:text-yellow-600 transition duration-300">Dokumentasi Event</a></li>
+                            <li><a href="#" class="hover:text-yellow-600 transition duration-300">Potret</a></li>
+                            <li><a href="#" class="hover:text-yellow-600 transition duration-300">Year Book/Album Kenangan</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-gray-200 font-bold mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-yellow-600 transition duration-300">Kebijakan Privasi</a></li>
+                            <li><a href="#" class="hover:text-yellow-600 transition duration-300">Syarat & Ketentuan</a></li>
+                            <li><a href="#" class="hover:text-yellow-600 transition duration-300">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center">
+                <p class="text-sm">© 2021. Abadi Visual Seluruh hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Contact Button -->
+    <a href="https://bit.ly/AbadiVisual" class="fixed bottom-8 right-8 bg-yellow-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl floating-btn z-40">
+        <i class="fas fa-envelope text-xl"></i>
+    </a>
+    
+    <!-- Payment Menu -->
+<div id="payment-menu" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg p-8 w-11/12 md:w-1/3">
+        <h3 class="text-xl font-bold mb-4">Metode Pembayaran</h3>
+        <p class="mb-4">Silakan pilih metode pembayaran yang Anda inginkan:</p>
+        <ul class="space-y-2">
+            <li><button class="payment-button bg-yellow-600 text-white px-4 py-2 rounded w-full" onclick="showThankYouMessage('Dana')">Dana</button></li>
+            <li><button class="payment-button bg-yellow-600 text-white px-4 py-2 rounded w-full" onclick="showThankYouMessage('OVO')">OVO</button></li>
+            <li><button class="payment-button bg-yellow-600 text-white px-4 py-2 rounded w-full" onclick="showThankYouMessage('GoPay')">GoPay</button></li>
+            <li><button class="payment-button bg-yellow-600 text-white px-4 py-2 rounded w-full" onclick="showThankYouMessage('BCA')">BCA</button></li>
+            <li><button class="payment-button bg-yellow-600 text-white px-4 py-2 rounded w-full" onclick="showThankYouMessage('QRIS')">QRIS</button></li>
+            <li><button class="payment-button bg-yellow-600 text-white px-4 py-2 rounded w-full" onclick="showThankYouMessage('BRI')">BRI</button></li>
+            <li><button class="payment-button bg-yellow-600 text-white px-4 py-2 rounded w-full" onclick="showThankYouMessage('Sea Bank')">Sea Bank</button></li>
+        </ul>
+        <button class="mt-4 bg-red-600 text-white px-4 py-2 rounded w-full" onclick="closePaymentMenu()">Tutup</button>
+    </div>
+</div>
+
+    <script>
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fadeIn');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would typically send the form data to a server
+                alert('Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.');
+                this.reset();
+            });
+        }
+
+        // Payment menu functions
+        function showPaymentMenu(service) {
+            document.getElementById('payment-menu').classList.remove('hidden');
+            alert(`Anda memilih layanan: ${service}`);
+        }
+
+        function closePaymentMenu() {
+            document.getElementById('payment-menu').classList.add('hidden');
+        }
+        // Function to show thank you message
+    function showThankYouMessage(method) {
+        alert(`Terima kasih! Anda telah memilih metode pembayaran: ${method}`);
+        closePaymentMenu(); // Close the payment menu after selection
+    }
+    </script>
+</body>
+</html>
